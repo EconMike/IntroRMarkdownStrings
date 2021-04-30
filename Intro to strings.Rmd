@@ -1,0 +1,287 @@
+---
+title: "Intro to Strings"
+author: "Mike J"
+date: "4/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Things you can and can't do with strings in R
+
+```{r nostrings }
+e <- 'Mixed quotes" 
+print(e)
+
+f <- 'Single quote ' inside single quote'
+print(f)
+
+g <- "Double quotes " inside double quotes"
+print(g)
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r cando, echo=FALSE}
+string1 <- "This is a string"
+string1
+
+
+string2 <- 'If I want to include a "quote" inside a string, I use single quotes'
+string2
+```
+```{r bad}
+ex3 <- "This "is" totally unacceptable"
+
+ex4 <- 'This 'is' absolutely wrong'
+```
+```{r example}
+example[1] <- "first"
+example
+
+length(example)
+```
+
+#The basic syntax for format function is −
+
+format(x, digits, nsmall, scientific, width, justify = c("left", "right", "centre", "none"))
+#Following is the description of the parameters used −
+
+x is the vector input.
+
+digits is the total number of digits displayed.
+
+nsmall is the minimum number of digits to the right of the decimal point.
+
+scientific is set to TRUE to display scientific notation.
+
+width indicates the minimum width to be displayed by padding blanks in the beginning.
+
+justify is the display of the string to left, right or center.
+
+
+```{r formats}
+# Total number of digits displayed. Last digit rounded off.
+result <- format(23.123456789, digits = 9)
+print(result)
+
+# Display numbers in scientific notation.
+result <- format(c(6, 13.14521), scientific = TRUE)
+print(result)
+
+# The minimum number of digits to the right of the decimal point.
+result <- format(23.47, nsmall = 5)
+print(result)
+
+# Format treats everything as a string.
+result <- format(6)
+print(result)
+
+# Numbers are padded with blank in the beginning for width.
+result <- format(13.7, width = 6)
+print(result)
+class(result)
+
+# Left justify strings.
+result <- format("Hello", width = 8, justify = "l")
+print(result)
+
+# Justfy string with center.
+result <- format("Hello", width = 8, justify = "c")
+print(result)
+```
+
+To change strings to all upper case or all lower case
+
+The basic syntax for toupper() & tolower() function is −
+
+```{r cases}
+x<-"heLLo"
+
+toupper(x)
+tolower(x)
+nchar(x)
+
+
+```
+
+
+substring(x,first,last)
+Following is the description of the parameters used −
+
+x is the character vector input.
+
+first is the position of the first character to be extracted.
+
+last is the position of the last character to be extracted.
+
+```{r substring}
+# Extract characters from 5th to 7th position.
+result <- substring("Extract", 5, 7)
+print(result)
+
+x <- c("d", "a", "c", "abba")  
+
+#where is the character located in the vector
+grep("a", x)
+
+base <- "Wow that was cool."
+sub("cool", "AWESOMAZING!", base)
+```
+
+paste: Concatenate Strings
+
+```{r paste}
+a <- "Hello"
+b <- 'How'
+c <- "are you? "
+
+print(paste(a,b,c))
+
+
+print(paste(a,b,c, sep = "-"))
+
+print(paste(a,b,c, sep = "", collapse = ""))
+```
+
+
+Count the character within a string  nchar()
+
+```{r ct}
+
+#With the help of this function, we can count the characters. 
+str <- "Big Data at DataFlair"
+ nchar(str)
+ 
+```
+sprintf()
+This function makes of the formatting commands that are styled after C.
+
+```{r spr}
+ 
+sprintf("%s scored %.2f percent", "Matthew", 72.3)
+
+sprintf("%2$f scored %1$s percent", "Matthew", 72.3)
+```
+
+```{r subst}
+x1 <- "Get excited" 
+substr(x1, start = 5, stop = 13)
+
+
+```
+
+```{r dataflair}
+#Author DataFlair
+num <- "12345678"
+substr(num, 4, 5)
+substr(num, 5, 7)
+
+x <- c("d", "a", "c", "abba")      # Create example character vector
+t=grep("a", x)
+t
+
+# Creating a sequence from 1 to 9
+x <- 1:9
+
+# Calling cat() function
+cat(x, sep =" + ")
+cat("\n")
+cat(x, sep =" / ")
+
+
+```
+
+
+```{r replacev}
+#a input vector 
+df<-"R is a collaborative project with many contributors"
+
+#replaces the string 
+sub('R','R language',df)
+
+
+
+```
+
+```{r replace}
+#creating a data frame
+df<-data.frame(Column_1 = c('Florida','Germany','Georgia','Geniva','Istanbul','NewZealand','Australia'), Column_2=c(1,2,3,4,5,6,7))
+
+#data frame
+df
+
+#replacing the G character with A
+sub('G','A',df)
+```
+
+
+Stringr
+
+```{r stringr }
+#install.packages("stringr")
+library(stringr)
+
+#count length
+str_length(c("a", "R for data science", NA))
+
+#concatenate
+str_c("x", "y")
+
+#concatenate
+str_c("x", "y", "z")
+
+#concatenate with a separator
+str_c("x", "y", sep = ", ")
+
+#concatenate with a prefix or suffix
+str_c("prefix-", c("a", "b", "c"), "-suffix")
+
+#separate out string values
+x <- c("Apple", "Banana", "Pear")
+str_sub(x, 1, 3)
+
+# negative numbers count backwards from end
+str_sub(x, -3, -1)
+
+```
+```{r strup }
+str_to_upper(c("i", "ı"))
+
+#change to different language Turish
+str_to_upper(c("i", "ı"), locale = "tr")
+
+```
+
+Split strings
+
+```{r splits}
+fruits <- c(
+  "apples and oranges and pears and bananas",
+  "pineapples and mangos and guavas"
+)
+#remove the string and
+str_split(fruits, " and ")
+
+```
+
+```{r}
+#Author DataFlair
+
+#split into pieces
+
+str = "Splitting sentence into words"
+strsplit(str, " ")
+
+#replace string with new text
+
+x <- c("why", "video", "cross", "extra", "deal", "authority")
+str_replace(x, "[aeiou]", "?")
+
+```
+
