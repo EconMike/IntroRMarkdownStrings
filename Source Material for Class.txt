@@ -1,0 +1,24 @@
+Sources for Rmarkdown:
+
+https://stats.idre.ucla.edu/stat/data/rmarkdown/rmarkdown_seminar.html#(5)
+
+https://ourcodingclub.github.io/tutorials/rmarkdown/
+
+https://kbroman.org/knitr_knutshell/pages/Rmarkdown.html
+
+https://bookdown.org/yihui/rmarkdown-cookbook/chunk-variable.html
+
+https://sachsmc.github.io/knit-git-markr-guide/knitr/knit.html
+
+https://rmarkdown.rstudio.com/lesson-1.html
+https://ourcodingclub.github.io/tutorials/rmarkdown/
+
+https://www.earthdatascience.org/courses/earth-analytics/document-your-science/about-open-science-and-why-open-science-is-important/
+
+
+Sources for STrings in R 
+https://www.journaldev.com/40528/string-in-r
+
+https://data-flair.training/blogs/r-string-manipulation/
+
+https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html
