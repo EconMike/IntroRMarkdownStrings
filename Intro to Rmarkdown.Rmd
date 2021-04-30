@@ -1,0 +1,73 @@
+---
+title: "Practice"
+author: "Mike J"
+date: "4/29/2021"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#Global Options
+#To set global options that apply to every chunk in #your file
+```
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars }
+summary(cars)
+summary(sleep)
+```
+<br>
+
+```{r cars2 , echo=FALSE}
+summary(cars)
+summary(sleep)
+
+```
+
+<br>
+
+## This is an example of an inline code
+# Insert R code directly into text, which will be replaced by its output when rendered.
+
+
+The mean value for the extra variable for the Sleep data set is  `r mean(sleep$extra)`
+
+<br>
+<br>
+<br>
+
+$$
+\hat{\mathbf{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
+$$
+
+$$mean(X) = \frac{\sum\_{i=1}^nX}{n}$$ 
+
+## Including Plots
+
+You can also embed plots, for example:
+
+
+
+
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+
+setwd("F:/Meetup/Rmarkdown/")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Create images from your folder
+
+![hi.jpg](F:\\Meetup\\Rmarkdown\\hi.jpg)
