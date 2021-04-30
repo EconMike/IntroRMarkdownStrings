@@ -1,6 +1,6 @@
 ---
 title: "Practice"
-author: "Mike J"
+author: "Your Name"
 date: "4/29/2021"
 output:
   word_document: default
